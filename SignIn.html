@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign IN page</title>
+    <link rel= "stylesheet" href = "SignIn.css">
+</head>
+<body>
+    <h1>Sign In page</h1>
+    <div class = "div1">
+            
+        <a href = "index1.html" style = "margin:10px; margin-left:700px">Home</a>
+        <a href = "Login.html" style = "margin:5px">Login</a>
+        <a href = "SignIn.html" style = "margin:5px;">SignIn</a></div>
+
+        
+   <form id = "signin">
+    <!-- <form> -->
+         Name  : 
+         <input type ="text" placeholder="Enter the name" id = "name" style ="margin-left:30px; padding:5px;"><br>
+    
+    <!-- </form> -->
+
+    <!-- <form> -->
+        Contact: 
+        <input type = "number" id = "number" placeholder="Enter the Number"  style = "margin:10px;margin-left:20px;padding:5px;";><br>
+    <!-- </form> -->
+
+    <!-- <form> -->
+        Email:
+         <input type = "email"placeholder="Enter the email" id = "email" style = "margin:10px;margin-left:30px;padding:5px;" ><br>
+    <!-- </form> -->
+
+    <!-- <form> -->
+        password: 
+        <input type = "password"placeholder="password" id = "password" style = "margin:10px;margin-left:20px;padding:5px;"><br>
+    <!-- </form> -->
+
+     <input type = "submit"  id = "submit" value = "signUp"  style = "margin:10px;padding:5px;"/></form>
+<!-- </div> -->
+
+    
+</body>
+</html>
+
+<script>
+document.querySelector("form").addEventListener("submit",signupfun);
+var sign_up_arr;
+
+if(localStorage.getItem("signUp")===null){
+     sign_up_arr = [];
+ }else{
+     sign_up_arr = JSON.parse(localStorage.getItem("signUp"));
+ }
+
+function signupfun(){
+    event.preventDefault();
+    var arr = {
+        name : document.querySelector("#name").value,
+        password:document.querySelector("#password").value,
+        email:document.querySelector("#email").value,
+        number:document.querySelector("#number").value,
+    }
+    if(arr.name.length === 0 || arr.password.length === 0 || arr.email.length===0 || arr.number.length===0){
+   alert("please enter all fields")
+    }
+    else{
+        sign_up_arr.push(arr);
+        localStorage.setItem("signUp",JSON.stringify(sign_up_arr));
+        window.location.href = "./login.html";
+
+     
+    }
+}
+</script>

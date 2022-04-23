@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel= "stylesheet" href = "SignIn.css">
+</head>
+<body>
+    <h1>Login page</h1>
+    <div class = "div1">
+            
+        <a href = "index1.html" style = "margin:10px; margin-left:700px">Home</a>
+        <a href = "Login.html" style = "margin:5px">Login</a>
+        <a href = "SignIn.html" style = "margin:5px;">SignIn</a></div>
+
+        <form id = "login_page">
+            <p>Email</p>
+            <input type = "email" id = "email" placeholder = "enter mail"> 
+            <p>password</p>
+            <input type = "password" id = "password" placeholder = "enter password"><br>
+            <input type = "submit" id = "submit" value = "login" >
+        </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("from").addEventListener("submit",loginfun)
+    var data_login = JSON.parse(localStorage.getItem("signUp")) || [];
+    console.log(data_login)
+
+    function loginfun(){
+        event.preventDefault();
+        alert("login successfully")
+        window.location.href = "index1.html"
+    }
+</script>

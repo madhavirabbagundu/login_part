@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel= "stylesheet" href = "SignIn.css">
+    <style>
+       
+       
+    </style>
+</head>
+
+<body>
+  
+    
+    <div class = "div1">
+            
+    <a href = "index1.html" style = "margin:10px; margin-left:700px">Home</a>
+    <a href = "Login.html" style = "margin:5px">Login</a>
+    <a href = "SignIn.html" style = "margin:5px;">SignIn</a></div>
+
+
+    <div id = "container"></div>
+   
+
+
+</body>
+</html>
+<script>
+
+    var arr = [
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1R2VwECb4XuWxo7WH_vAKq0CIPAcilfpUaw&usqp=CAU",
+     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYJpaA7Pjn2svVrebJ8p-afN5yHHaTLqP0uw&usqp=CAU",
+    " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmgLno6F_3clnUJPWXa2zm3v36R80v7fKVfQ&usqp=CAU",
+
+    ]
+let container = document.getElementById("container")
+function start(){
+    var count = 0
+    setInterval(function(){
+  container.innerHTML = null;
+  if(count === arr.length){
+      count = 0
+  }
+  var box = document.createElement("div")
+  box.setAttribute("id","box")
+   var img = document.createElement("img")
+   img.src = arr[count]
+   container.append(box)
+   count++
+
+    },1000)
+
+}
+start()
+
+</script>
